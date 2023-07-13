@@ -1,0 +1,167 @@
+.orderFilters__globalContainer {
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+  width: 100%;
+  min-height: 430px;
+  padding: 25px 10px 60px 25px;
+  overflow-x: auto;
+  z-index: 99;
+}
+
+.orderFilters__globalContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.orderBy__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 18px;
+  font-weight: 900;
+  color: #15253C;
+  margin: 0;
+  padding: 10px 15px;
+  border-radius: 15px;
+  border: solid 1px #C7CCD3;
+  line-height: 1.5;
+  white-space: nowrap;
+  text-align: center;
+  cursor: pointer;
+}
+
+.orderBy__title::after {
+  content: '';
+  width: 25px;
+  height: 25px;
+  background-image: url('https://panamericana.vteximg.com.br/arquivos/arrow-circle-down-mle.svg');
+  background-size: contain;
+  background-position: center;
+  opacity: 0.5;
+  transition: all 300ms;
+}
+
+.orderBy__titleActive::after {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+
+.orderBy__listContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  border: none;
+  max-height: 0;
+  padding: 0;
+  z-index: 9;
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.orderBy__listContainerActive {
+  animation: list-active 600ms ease-in-out forwards;
+}
+
+.orderBy__listContainerInactive {
+  animation: list-inactive 600ms ease-in-out forwards;
+}
+
+.orderBy__itemContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.orderBy__itemCheckbox {
+  max-height: 20px;
+  max-width: 20px;
+  min-height: 20px;
+  min-width: 20px;
+  border-radius: 1px;
+  border: solid 1px #C7CCD3;
+  cursor: pointer;
+}
+
+.orderBy__itemCheckboxSelected {
+  background-color: #15253C;
+}
+
+.orderBy__itemName {
+  font-size: 15px;
+  font-weight: 700;
+  color: #15253C;
+  margin: 0;
+}
+
+@keyframes list-active {
+  0% {
+    max-height: 0;
+    padding: 0;
+    border: none;
+  }
+
+  10% {
+    border: solid 1px #C7CCD3;
+    padding: 15px 10px;
+  }
+
+  100% {
+    max-height: 1000px;
+    padding: 15px 10px;
+    border: solid 1px #C7CCD3;
+  }
+}
+
+@keyframes list-inactive {
+  0% {
+    max-height: 1000px;
+    padding: 15px 10px;
+    border: solid 1px #C7CCD3;
+  }
+
+  90% {
+    max-height: 0;
+  }
+
+  100% {
+    border: none;
+    max-height: 0;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .orderBy__title {
+    font-size: 16px;
+  }
+
+  .orderBy__title::after {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .orderFilters__globalContainer {
+    min-height: auto;
+    gap: 10px;
+    padding: 25px 12px 60px;
+  }
+
+  .orderBy__title {
+    font-size: 14px;
+  }
+
+  .orderBy__itemName {
+    font-size: 13px;
+  }
+}
+
+
+

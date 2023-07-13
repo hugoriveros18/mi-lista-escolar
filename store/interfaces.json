@@ -1,5 +1,13 @@
 {
+  "mi-lista-escolar-v2--context": {
+    "component": "ListaEscolarContext",
+    "composition": "children",
+    "allowed": "*"
+  },
   "mi-lista-escolar-v2": {
-    "component": "MiListaEscolarApp"
+    "component": "AppContent"
+  },
+  "filtros-escolar": {
+    "component": "Filters"
   }
 }

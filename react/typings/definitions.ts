@@ -6,11 +6,17 @@ type SkusFilter = 'FIRST_AVAILABLE' | 'ALL_AVAILABLE' | 'ALL'
 
 type SimulationBehavior = 'default' | 'skip'
 
+interface MaxItemsPerPage {
+  desktop: number
+  tablet: number
+  phone: number
+}
+
 interface ResultadosDeBusqueda {
   tituloPestaña: string
   orderByField: OrderByFieldInput
   hideUnavailableItems: boolean
-  maxItemsPerPage: number
+  maxItemsPerPage: MaxItemsPerPage
   skusFilter: SkusFilter
   simulationBehavior:SimulationBehavior
   queryField: string
@@ -20,5 +26,11 @@ interface ResultadosDeBusqueda {
 interface MiListaEscolarAppProps {
   resultadosDeBusqueda: ResultadosDeBusqueda[]
   CustomQueryResult: any
+}
+
+interface AppContentProps extends MiListaEscolarAppProps {}
+
+interface FiltersProps {
+  VtexFilters: any
 }
 

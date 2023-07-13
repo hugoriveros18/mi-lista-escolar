@@ -1,39 +1,23 @@
 export const appDefaultInfo:ResultadosDeBusqueda[] = [
   {
-    tituloPestaña: 'Cuadernos',
-    orderByField: "Relevancia",
-    hideUnavailableItems: true,
-    maxItemsPerPage: 15,
-    skusFilter: "ALL",
-    simulationBehavior: "default",
-    queryField: "570",
-    mapField: "c"
-  },
-  {
-    tituloPestaña: 'Escritura',
-    orderByField: "Relevancia",
-    hideUnavailableItems: true,
-    maxItemsPerPage: 12,
-    skusFilter: "ALL",
-    simulationBehavior: "default",
-    queryField: "570/572",
-    mapField: "c,c"
-  },
-  {
-    tituloPestaña: 'Papeles',
-    orderByField: "Relevancia",
-    hideUnavailableItems: true,
-    maxItemsPerPage: 12,
-    skusFilter: "ALL",
-    simulationBehavior: "default",
-    queryField: "155/218",
-    mapField: "c,c"
+    "tituloPestaña": "CUADERNOS",
+    "orderByField": "Descuento",
+    "hideUnavailableItems": true,
+    "maxItemsPerPage": {
+      "desktop": 12,
+      "tablet": 8,
+      "phone": 6
+    },
+    "skusFilter": "ALL",
+    "simulationBehavior": "default",
+    "queryField": "570/575/275",
+    "mapField": "c,c,c"
   }
 ]
 
 export const ordenarPorValues: OrderByFieldInput[] = [
-  'Relevancia',
-  'Ventas',
+  "Relevancia",
+  "Ventas",
   "Más Reciente",
   "Descuento",
   "Precios Más Altos",
@@ -43,13 +27,13 @@ export const ordenarPorValues: OrderByFieldInput[] = [
 ]
 
 export const ordenarPorValuesConvertidor: {[key: string]: OrderByField} = {
-  'Relevancia': 'OrderByScoreDESC',
-  'Ventas': 'OrderByTopSaleDESC',
-  "Más Reciente": 'OrderByReleaseDateDESC',
-  "Descuento": 'OrderByBestDiscountDESC',
-  "Precios Más Altos": 'OrderByPriceDESC',
-  "Precios Mas Bajos": 'OrderByPriceASC',
-  "Nombre, Creciente": 'OrderByNameASC',
-  "Nombre, Decreciente": 'OrderByNameDESC'
+  "Relevancia": "OrderByScoreDESC",
+  "Ventas": "OrderByTopSaleDESC",
+  "Más Reciente": "OrderByReleaseDateDESC",
+  "Descuento": "OrderByBestDiscountDESC",
+  "Precios Más Altos": "OrderByPriceDESC",
+  "Precios Mas Bajos": "OrderByPriceASC",
+  "Nombre, Creciente": "OrderByNameASC",
+  "Nombre, Decreciente": "OrderByNameDESC"
 }
 
