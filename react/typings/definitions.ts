@@ -34,3 +34,8 @@ interface FiltersProps {
   VtexFilters: any
 }
 
+interface StickyMinicartProps {
+  AppGrid: any
+  AppMinicart: any
+}
+

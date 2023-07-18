@@ -2,7 +2,9 @@ import React, { createContext, useState } from 'react';
 
 interface ContextValue {
   orderBy: OrderByFieldInput
+  activeTab: string
   setOrderBy: React.Dispatch<React.SetStateAction<OrderByFieldInput>>
+  setActiveTab: React.Dispatch<React.SetStateAction<string>>
 }
 
 interface ProveedorDelContextoProps {
@@ -15,13 +17,16 @@ export default function ListaEscolarContext({children}:ProveedorDelContextoProps
 
   //STATES
   const [orderBy, setOrderBy] = useState<OrderByFieldInput>('Relevancia');
+  const [activeTab, setActiveTab] = useState<string>('');
 
   //JSX
   return(
     <Context.Provider
       value={{
         orderBy: orderBy,
-        setOrderBy: setOrderBy
+        activeTab: activeTab,
+        setOrderBy: setOrderBy,
+        setActiveTab: setActiveTab
       }}
     >
       {children}

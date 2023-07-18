@@ -21,8 +21,8 @@ export default function AppContent({
   //CSS HANDLES
   const handles = useCssHandles(CSS_HANDLES);
 
-   //DETECTOR DE DISPOSITIVO
-   const { device } = useDevice();
+  //DETECTOR DE DISPOSITIVO
+  const { device } = useDevice();
 
   //GLOBAL CONTEXT
   const estadoGlobal = useContext(Context);
@@ -35,8 +35,9 @@ export default function AppContent({
 
   //EFFECTS
   useEffect(() => {
-    setQueryActiva(resultadosDeBusqueda[0])
-    estadoGlobal.setOrderBy(resultadosDeBusqueda[0].orderByField)
+    setQueryActiva(resultadosDeBusqueda[0]);
+    estadoGlobal.setOrderBy(resultadosDeBusqueda[0].orderByField);
+    estadoGlobal.setActiveTab(resultadosDeBusqueda[0].tituloPestaña);
   }, [])
 
   //METHODS
@@ -60,6 +61,7 @@ export default function AppContent({
 
     await setQueryActiva(result);
     await estadoGlobal.setOrderBy(result.orderByField);
+    await estadoGlobal.setActiveTab(result.tituloPestaña);
   }
 
   const calcularItemsPerPage = () => {
