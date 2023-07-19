@@ -1,7 +1,7 @@
 {
   "vendor": "panamericana",
   "name": "mi-lista-escolar",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "title": "Mi Lista Escolar",
   "description": "Aplicacion para pagina de Mi Lista Escolar",
   "builders": {

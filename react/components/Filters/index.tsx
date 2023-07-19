@@ -83,7 +83,6 @@ export default function Filters({ VtexFilters }: FiltersProps) {
     })
 
     const observer = new MutationObserver(() => {
-      console.log('ejecutando observer');
       validarWidthContenedor();
       setTranslateValue(0);
     })
@@ -97,18 +96,13 @@ export default function Filters({ VtexFilters }: FiltersProps) {
       window.removeEventListener('resize', () => {
         validarWidthContenedor();
       });
+      observer.disconnect();
     };
   }, [])
 
   useEffect(() => {
     setTranslateValue(0);
   }, [estadoGlobal.activeTab])
-
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     validarWidthContenedor();
-  //   },1500)
-  // }, [runTime])
 
 
   //JSX
